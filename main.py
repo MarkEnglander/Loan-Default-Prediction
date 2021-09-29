@@ -7,10 +7,13 @@ pd = pd.read_csv('data/train_v2.csv')
 
 def output_single_dists(num):
     for i in range(num):
-        plt.hist(pd['f' + str(i + 1)], bins=100)
-        plt.title('Feature ' + str(i + 1) + ' Distribution')
-        plt.savefig('data-visualisation/individual-features-distributions/feature-' + str(i + 1) + '-dist')
-        plt.clf()
+        try:
+            plt.hist(pd['f' + str(i + 1)], bins=100)
+            plt.title('Feature ' + str(i + 1) + ' Distribution')
+            plt.savefig('data-visualisation/individual-features-distributions/feature-' + str(i + 1) + '-dist')
+            plt.clf()
+        except Exception as e:
+            print("unsuccessful for f" + str(i))
 
 
 def mult_dist_plot(num_plot, start=0):
@@ -22,4 +25,4 @@ def mult_dist_plot(num_plot, start=0):
         axs[i].hist(pd['f' + str(i + 1)], bins=100)
 
 
-output_single_dists(10)
+output_single_dists(799)
