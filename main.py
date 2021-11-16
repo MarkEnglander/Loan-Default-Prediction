@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import random
 
 pd = pd.read_csv('data/train_v2.csv')
 
@@ -25,4 +26,18 @@ def mult_dist_plot(num_plot, start=0):
         axs[i].hist(pd['f' + str(i + 1)], bins=100)
 
 
-output_single_dists(799)
+# output_single_dists(799)
+
+def arithmetic():
+    for i in range(10):
+        a = random.randint(1, 100)
+        b = random.randint(1, 100)
+        c = a * b
+        d = input("What is " + str(a) + " * " + str(b) + "? ")
+        if d == str(c):
+            print("Correct")
+        else:
+            print("No, idiot, it is " + str(c))
+
+
+arithmetic()
