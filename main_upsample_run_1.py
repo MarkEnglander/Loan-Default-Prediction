@@ -18,7 +18,7 @@ from sklearn.utils import resample
 import PandasSimpleImputer
 
 
-def run_classifier(clf, data_points=None):
+def run_classifier(clf, data_points=None, suppress_prints=False):
     df = useful_functions.import_all_data()
     df = useful_functions.clean_dataset(df, delete_missing_data=False)
 
@@ -54,6 +54,8 @@ def run_classifier(clf, data_points=None):
     clf.fit(X_train, y_train)
     pred_clf = clf.predict(X_test)
 
-    print('Classifier name: ' + type(clf).__name__)
-    print(classification_report(y_test, pred_clf))
-    print(confusion_matrix(y_test, pred_clf))
+    if not suppress_prints:
+        print('Classifier name: ' + type(clf).__name__)
+        print(classification_report(y_test, pred_clf))
+        print(confusion_matrix(y_test, pred_clf))
+    return confusion_matrix(y_test, pred_clf)

@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.utils import resample
-from xgboost import XGBClassifier
+
 
 scores = ["recall", "precision", "accuracy"]
 
