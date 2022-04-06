@@ -1,3 +1,15 @@
 venv
 data/test_v2.csv
 data/train_v2.csv
+generated-data/X-new.csv
+generated-data/X-new2.csv
+generated-data/X-test-new.csv
+generated-data/X-test-new2.csv
+generated-data/X-train-new.csv
+generated-data/X-train-new2.csv
+generated-data/X-val-new.csv
+generated-data/X-val-new2.csv
+generated-data/y-in-order-for-new2.csv
+generated-data/y-test.csv
+generated-data/y-train.csv
+generated-data/y-val.csv
